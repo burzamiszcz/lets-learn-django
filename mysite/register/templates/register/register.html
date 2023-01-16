@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% comment %} {% load crispy_forms_tags%} {% endcomment %}
+
+{% block content %}
+<h1>Rejestracja</h1>
+
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    <div class="input-section">
+        <label>Nazwa użytkownika</label>
+        {{form.username}}
+    </div>
+    <div class="input-section">
+        <label>Adres email</label>
+        {{form.email}}
+    </div>
+    <div class="input-section">
+        <label>Hasło</label>
+        {{form.password1}}
+    </div>
+    <div class="input-section">
+        <label>Powtórz hasło</label>
+        {{form.password2}}
+    </div>
+    
+    <button type="submit" class="btn">Register</button>
+</form>
+{% endblock content %}

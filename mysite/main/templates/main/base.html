@@ -1,11 +1,34 @@
 <html>
 <head>
+    {% load static %}
     <title>UrodzinyDziecka</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+    <div class="bar">
+        <h1>Witaj na stronie UrodzinyDziecka.pl!</h1>
+    </div>
+    <div class="navbar">
 
-    <h1>Witaj na stronie UrodzinyDziecka.pl!</h1>
-    {% block content %}
-    {% endblock %}
+        <a href="/">
+            <div class="navbar-elem">
+                Strona główna
+            </div>
+        </a>
+        <a href="/register">
+            <div class="navbar-elem">
+                Rejestracja
+            </div>
+        </a>
+        <div class="navbar-elem">
+            Logowanie
+        </div>
+    </div>
+
+    <div class="register-section">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>

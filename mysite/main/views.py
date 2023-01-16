@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import *
 from .forms import CreateNewUser
 
+
 # Create your views here.
 def index(response):
     form = CreateNewUser()
