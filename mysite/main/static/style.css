@@ -10,12 +10,13 @@ body{
 .bar {
     width: 100%;
     height: 100px;
-    background-color: beige;
+    background-color:rgba(243, 213, 168, 0.733);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 10px beige;
+    box-shadow: 0 0 15px white;
+    flex-direction: column;
 }
 
 h1 {
@@ -83,6 +84,7 @@ h1 {
     margin: 5px 5px;
     background-color: antiquewhite;
     transition: .3s ease background-color;
+    border-radius: 50px;
 }
 
 .navbar-elem:hover{

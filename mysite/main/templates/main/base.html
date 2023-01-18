@@ -16,14 +16,27 @@
                 Strona główna
             </div>
         </a>
+
+        
         <a href="/register">
             <div class="navbar-elem">
                 Rejestracja
             </div>
         </a>
-        <div class="navbar-elem">
-            Logowanie
-        </div>
+
+        {% if user.is_authenticated %}
+        <a href="/logout">
+            <div class="navbar-elem">
+                Wyloguj
+            </div>
+        </a>
+        {% else %}
+        <a href="/login">
+            <div class="navbar-elem">
+                Logowanie
+            </div>
+        </a>
+        {% endif %}
     </div>
 
     <div class="register-section">
