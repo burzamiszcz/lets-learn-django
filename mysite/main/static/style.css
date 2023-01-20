@@ -4,6 +4,11 @@
     font-family: "Open Sans", sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 body{
     margin: 0px;
 }
@@ -90,4 +95,43 @@ h1 {
 .navbar-elem:hover{
     background-color: aquamarine;
     cursor: pointer;
+}
+
+.ad-elem{
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    transition: .2s ease transform;
+}
+
+.ad-elem:hover{
+    transform: scale(1.05)
+}
+
+.ad-elem p{
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.all-chats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-chats a{
+    width: 75%;
+}
+
+.chat-elem{
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px;
+    transition: .2s ease transform;
+}
+
+.chat-elem:hover{
+    transform: scale(1.05)
 }

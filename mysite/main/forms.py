@@ -1,4 +1,8 @@
 from django import forms
+from .models import Ad
 
-class CreateNewUser(forms.Form):
-    username = forms.CharField(label = "username", max_length=50)
+
+class CreateNewAd(forms.ModelForm):
+    class Meta:
+        model = Ad
+        fields = ['name','text']

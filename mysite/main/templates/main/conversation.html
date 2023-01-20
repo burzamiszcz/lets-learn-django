@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+<!-- conversation.html -->
+
+
+{% block content %}
+<h1>Conversation with {{ receiver_username }}</h1>
+<ul>
+    {% for message in messages %}
+    <li>
+        <strong>{{ message.sender.username }}</strong>
+        <em>{{ message.created_at }}</em>
+        <p>{{ message.message_text }}</p>
+    </li>
+    {% endfor %}
+</ul>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="message_text">
+    <input type="submit" value="Send">
+</form>
+{% endblock content %}

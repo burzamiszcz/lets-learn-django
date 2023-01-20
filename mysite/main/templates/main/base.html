@@ -13,10 +13,21 @@
 
         <a href="/">
             <div class="navbar-elem">
-                Strona główna
+                Lista Ofert
             </div>
         </a>
-
+        {% if user.is_authenticated %}
+        <a href="/add_new_offer">
+            <div class="navbar-elem">
+                Dodaj Oferte
+            </div>
+        </a>
+        <a href="/conversations">
+            <div class="navbar-elem">
+                Wiadomości
+            </div>
+        </a>
+        {% endif %}
         
         <a href="/register">
             <div class="navbar-elem">

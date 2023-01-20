@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load access_tags %}
+
+
+
+{% block content %}
+<h1>Conversations</h1>
+    <div class="all-chats">
+        {% for partner in partners %}
+        <a href="/conversation/{{partner.receiver__username}}">
+            <div class="chat-elem">
+                <h3>{{partner.receiver__username}}</h3>
+                <p>{{ last_messages|from_dict:partner.receiver__username }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

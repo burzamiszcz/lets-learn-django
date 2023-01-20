@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h1>Dodaj nowe ogłoszenie!</h1>
+<form method="post" action="/add_new_offer" class="form-group">
+    {% csrf_token %}
+    <div class="input-section">
+        <label>Nazwa oferty</label>
+        {{form.name}}
+    </div>
+    <div class="input-section">
+        <label>Treść oferty</label>
+        {{form.text}}
+    </div>
+
+    <button class="btn" type="submit", name="save">Dodaj ogłoszenie</button>
+</form>
+
+{% endblock content %}

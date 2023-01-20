@@ -1,17 +1,14 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <h2>Dodaj nowego użytkownika!</h2>
-    <form method="post" action="/">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit", name="save">Utwórz nowe konto</button>
-    </form>
 
-    <h2>Zarejestrowni użytkownicy:</h2>
-    <ul>
+    <h2>Ogłoszenia w serwisie:</h2>
     {% for user in userList  %}
-        <li>{{user}}</li>
+    <a href="ad/{{user.id}}">
+        <div class="ad-elem" value="{{user.id}}">
+            <h2>{{user.name}}<h2>
+            <p>{{user.text}}</p>
+        </div>
+    </a>
     {% endfor %}
-    </ul>
 {% endblock %}
