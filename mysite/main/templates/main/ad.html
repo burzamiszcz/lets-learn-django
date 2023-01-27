@@ -3,7 +3,15 @@
 {% block content %}
 
 <h1>Ogłoszenie nr {{id}}<h2>
+<h5>{{adData.username}}</h5>
 <h2>{{adData.name}}</h2>
 <p>{{adData.text}}<p>
+{% if user.is_authenticated %}
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="message_text">
+    <input type="submit" value="Send">
+</form>
+{% endif %}
 {% endblock content %}
 

@@ -7,10 +7,13 @@
 <h1>Conversations</h1>
     <div class="all-chats">
         {% for partner in partners %}
-        <a href="/conversation/{{partner.receiver__username}}">
+        <a href="/conversation/{{partner.receiver__username}}/{{partner.offer_id}}">
             <div class="chat-elem">
+                {% comment %} {{partner.receiver__username, partner.offer_id}} {% endcomment %}
+                {{ad_titles|key_dict:partner.offer_id}}
                 <h3>{{partner.receiver__username}}</h3>
-                <p>{{ last_messages|from_dict:partner.receiver__username }}</p>
+                {{ last_messages|last_message_dict:partner}}
+                {% comment %} <p>{{ last_messages|from_dict:partner}}</p> {% endcomment %}
             </div>
         </a>
         {% endfor %}

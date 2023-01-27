@@ -4,7 +4,9 @@
 
 
 {% block content %}
-<h1>Conversation with {{ receiver_username }}</h1>
+
+<h1>{{offer}}</h1>
+<h2>{{ receiver_username }}</h2>
 <ul>
     {% for message in messages %}
     <li>
